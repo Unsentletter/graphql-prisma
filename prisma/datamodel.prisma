@@ -1,0 +1,27 @@
+type User @db(name: "user") {
+  id: ID! @id
+  name: String! @db(name: "name")
+  email: String! @unique
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt
+  posts: [Post!]!
+}
+
+type Post @db(name: "post") {
+  id: ID! @id
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt
+  title: String!
+  body: String!
+  published: Boolean!
+  author: User!
+}
+
+type Comment @db(name: "comment") {
+  id: ID! @id
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt
+  text: String!
+  author: User!
+  post: Post!
+}
