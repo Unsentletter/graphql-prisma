@@ -1,0 +1,27 @@
+# source: http://localhost:4466/server
+# timestamp: Mon Nov 18 2019 08:35:06 GMT+1100 (Australian Eastern Daylight Time)
+
+"""Raw JSON value"""
+scalar Json
+
+type Mutation {
+  executeRaw(database: PrismaDatabase, query: String!): Json!
+}
+
+"""An object with an ID"""
+interface Node {
+  """The id of the object."""
+  id: ID!
+}
+
+enum PrismaDatabase {
+  default
+}
+
+type Query {
+  """Fetches an object given its ID"""
+  node(
+    """The ID of an object"""
+    id: ID!
+  ): Node
+}
