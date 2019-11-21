@@ -1,3 +1,4 @@
-endpoint: ${env:PRISMA_ENDPOINT}
+#endpoint: ${env:PRISMA_ENDPOINT}
+endpoint: https://southwell-blogging-768396059d.herokuapp.com/graphql-Prisma/dev
 datamodel: datamodel.prisma
 secret: ${env:PRISMA_SECRET}
